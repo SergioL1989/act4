@@ -65,24 +65,24 @@
     </form>
 </div>
 <script>
-    // Validación de campos en el formulario
+    // Simulación de inicio de sesión
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();  // Prevenir el envío del formulario para la validación
         
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-        
-        // Mostrar mensaje de error si los campos están vacíos
-        if (!username || !password) {
-            alert("Por favor, ingresa tanto usuario como contraseña.");
-            return;
-        }
 
-        // Si los campos están completos, continuar con el envío del formulario
-        alert("Formulario válido. Enviando datos...");
-        // Aquí el formulario puede enviarse al servidor si todo es correcto.
+        // Historia 3: Verificar las credenciales correctas
+        if (username === "usuario" && password === "contraseña123") {
+            alert("¡Login exitoso!");
+            // Aquí aqui nos podríamos redirigir a otra página, por ejemplo:
+            // window.location.href = "/home";
+        } else {
+            alert("Usuario o contraseña incorrectos.");
+        }
     });
 </script>
+
 
 </body>
 </html>
