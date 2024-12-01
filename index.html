@@ -65,24 +65,29 @@
     </form>
 </div>
 <script>
-    // Simulación de inicio de sesión
+    // Mostrar mensaje de error si las credenciales son incorrectas
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();  // Prevenir el envío del formulario para la validación
         
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-
-        // Historia 3: Verificar las credenciales correctas
+        const errorMessage = document.getElementById('error-message');
+        
+        // Validación de credenciales
         if (username === "usuario" && password === "contraseña123") {
             alert("¡Login exitoso!");
-            // Aquí aqui nos podríamos redirigir a otra página, por ejemplo:
-            // window.location.href = "/home";
+            // Aquí redirigirías a la página principal
         } else {
-            alert("Usuario o contraseña incorrectos.");
+            errorMessage.textContent = "Usuario o contraseña incorrectos.";
+            errorMessage.style.display = 'block';
         }
     });
 </script>
 
+<!-- Mensaje de error -->
+<div id="error-message" style="color: red; display: none; text-align: center;">
+    Usuario o contraseña incorrectos.
+</div>
 
 </body>
 </html>
